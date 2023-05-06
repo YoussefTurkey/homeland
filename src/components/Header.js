@@ -1,7 +1,25 @@
 import React from 'react';
+// import link
+import {Link} from 'react-router-dom'
+// import Logo
+import Logo from '../assets/img/logo.svg'
 
 const Header = () => {
-  return <div>Header</div>;
+  return(
+    // I used "mx-auto" to make container in center
+    <header className='py-6 mb-12 border-b'>
+      <nav className='container mx-auto flex justify-between items-center'>
+      <Link to='/'>
+        <img src={Logo} alt='HomeLand Logo' />
+      </Link>
+
+      <div className='flex items-center gap-6'>
+        <Link className='hover:text-violet-900 transition' to=''>Log in</Link>
+        <Link className='bg-violet-700 hover:bg-violet-800 text-white px-4 py-3 rounded-lg transition'to=''>Sign up</Link>
+      </div>
+    </nav>
+    </header>
+  );
 };
 
 export default Header;
